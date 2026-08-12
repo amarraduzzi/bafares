@@ -1,10 +1,12 @@
 import { MenuItem, Testimonial, GalleryItem } from '../types';
 
 // Images
-import chefMascotImg from '../assets/images/bafareshero.webp';
+// LET OP: bafareshero.webp was corrupt (onherstelbaar beschadigd bestand) en is vervangen
+// door bafares_chef_tray_1786541742953.jpg, dezelfde correcte mascotte (kaal hoofd, geen baard, witte koksmuts).
+import chefMascotImg from '../assets/images/bafareslogonieuw.webp';
 import chefTrayImg from '../assets/images/bafares_chef_tray_1786541742953.jpg';
 import heroBgImg from '../assets/images/bafares_hero_1786540725200.jpg';
-import heroWebpImg from '../assets/images/bafareshero.webp';
+import heroWebpImg from '../assets/images/bafareslogonieuw.webp';
 import couscousImg from '../assets/images/couscous_plat_1786540741412.jpg';
 import hariraImg from '../assets/images/harira_soup_1786540754912.jpg';
 import pastriesImg from '../assets/images/pastries_plat_1786540769843.jpg';

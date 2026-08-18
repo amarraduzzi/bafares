@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUp, Instagram, MessageCircle, Phone, MapPin, Heart } from 'lucide-react';
+import { ArrowUp, Instagram, Phone, MapPin, Heart } from 'lucide-react';
 import { Language } from '../types';
 import { translations } from '../data/translations';
 import { ASSETS } from '../data/menuData';
@@ -26,8 +26,6 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
     { href: '#avis', label: t.nav.reputation },
     { href: '#nous-trouver', label: t.nav.findUs },
   ];
-
-  const whatsappUrl = `https://wa.me/212537660057?text=${encodeURIComponent(t.whatsappMsg)}`;
 
   return (
     <footer className="bg-[#3B1F0F] text-[#FAF6EE] pt-16 pb-8 border-t-4 border-[#F2C230] relative overflow-hidden">
@@ -71,16 +69,6 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                 aria-label="Instagram @bafares.1957"
               >
                 <Instagram className="w-4 h-4" />
-              </a>
-
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-[#FAF6EE]/10 hover:bg-[#F2C230] text-[#FAF6EE] hover:text-[#3B1F0F] flex items-center justify-center transition-colors"
-                aria-label="WhatsApp"
-              >
-                <MessageCircle className="w-4 h-4" />
               </a>
 
               <a
@@ -130,7 +118,11 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
               </p>
 
               <p className="text-[11px] text-[#FAF6EE]/60 pt-1">
-                Ouvert tous les jours de 07h00 à 00h00 (7j/7)
+                {lang === 'ar'
+                  ? 'مفتوح يومياً من 07:00 صباحاً إلى 23:00 ليلاً (7/7)'
+                  : lang === 'en'
+                  ? 'Open every day from 07:00 AM to 11:00 PM (7/7)'
+                  : 'Ouvert tous les jours de 07h00 à 23h00 (7j/7)'}
               </p>
             </div>
           </div>

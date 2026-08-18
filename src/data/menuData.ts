@@ -1,24 +1,22 @@
 import { MenuItem, Testimonial, GalleryItem } from '../types';
-
-// Images
-// LET OP: bafareshero.webp was corrupt (onherstelbaar beschadigd bestand) en is vervangen
-// door bafares_chef_tray_1786541742953.jpg, dezelfde correcte mascotte (kaal hoofd, geen baard, witte koksmuts).
-import chefMascotImg from '../assets/images/bafareslogonieuw.webp';
-import chefTrayImg from '../assets/images/bafares_chef_tray_1786541742953.jpg';
-import heroBgImg from '../assets/images/bafares_hero_1786540725200.jpg';
-import heroWebpImg from '../assets/images/bafareslogonieuw.webp';
-import couscousImg from '../assets/images/couscous_plat_1786540741412.jpg';
-import hariraImg from '../assets/images/harira_soup_1786540754912.jpg';
-import pastriesImg from '../assets/images/pastries_plat_1786540769843.jpg';
+import {
+  CHEF_MASCOT_DATA_URI,
+  CHEF_TRAY_DATA_URI,
+  HERO_BG_DATA_URI,
+  FULL_BREAKFAST_DATA_URI,
+  COUSCOUS_DATA_URI,
+  HARIRA_DATA_URI,
+  PASTRIES_DATA_URI,
+} from '../assets/images/images';
 
 export const ASSETS = {
-  chefMascot: chefMascotImg,
-  chefTray: chefTrayImg,
-  heroBg: heroBgImg,
-  heroWebp: heroWebpImg,
-  couscous: couscousImg,
-  harira: hariraImg,
-  pastries: pastriesImg,
+  chefMascot: CHEF_MASCOT_DATA_URI,
+  chefTray: CHEF_TRAY_DATA_URI,
+  heroBg: HERO_BG_DATA_URI,
+  heroWebp: CHEF_MASCOT_DATA_URI,
+  couscous: COUSCOUS_DATA_URI,
+  harira: HARIRA_DATA_URI,
+  pastries: PASTRIES_DATA_URI,
 };
 
 export const MENU_ITEMS: MenuItem[] = [
@@ -33,7 +31,7 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'The signature feast: 2 Rghaif, 1 Harcha, fresh goat cheese, pure honey, olive oil, beldi butter, black olives & mint tea.',
     category: 'breakfast',
     price: 45,
-    image: heroBgImg,
+    image: FULL_BREAKFAST_DATA_URI,
     tagFr: 'Spécialité Maison',
     tagAr: 'تخصص الدار',
     tagEn: 'House Specialty',
@@ -110,7 +108,7 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Hand-rolled semolina steam-cooked over broth, tender beef or chicken, 7 seasonal vegetables, chickpeas and sweet Tfaya onion-raisins.',
     category: 'mains',
     price: 65,
-    image: couscousImg,
+    image: COUSCOUS_DATA_URI,
     tagFr: 'Chaque Vendredi',
     tagAr: 'كل يوم جمعة',
     tagEn: 'Every Friday',
@@ -126,7 +124,7 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Hearty tomato, lentil, and chickpea soup infused with herbs, served with sweet Majhoul dates and honey chebakia.',
     category: 'mains',
     price: 25,
-    image: hariraImg,
+    image: HARIRA_DATA_URI,
     tagFr: 'Recette Grand-Mère',
     tagAr: 'وصفة الجدة',
     tagEn: 'Grandmother Recipe',
@@ -247,7 +245,7 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Delicate crescent pastries filled with fine sweet almond paste, cinnamon, and orange blossom water.',
     category: 'pastries',
     price: 12,
-    image: pastriesImg,
+    image: PASTRIES_DATA_URI,
     tagFr: 'Artisanat Fassi',
     tagAr: 'أصالة فاس',
     tagEn: 'Fassi Craft',
@@ -325,7 +323,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     categoryFr: 'Petit-Déjeuner',
     categoryAr: 'فطور',
     categoryEn: 'Breakfast',
-    image: heroBgImg,
+    image: FULL_BREAKFAST_DATA_URI,
   },
   {
     id: 'gal-2',
@@ -335,7 +333,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     categoryFr: 'Plats',
     categoryAr: 'أطباق',
     categoryEn: 'Mains',
-    image: couscousImg,
+    image: COUSCOUS_DATA_URI,
   },
   {
     id: 'gal-3',
@@ -345,7 +343,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     categoryFr: 'Soupes',
     categoryAr: 'شوربة',
     categoryEn: 'Soups',
-    image: hariraImg,
+    image: HARIRA_DATA_URI,
   },
   {
     id: 'gal-4',
@@ -355,7 +353,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     categoryFr: 'Pâtisseries',
     categoryAr: 'حلويات',
     categoryEn: 'Pastries',
-    image: pastriesImg,
+    image: PASTRIES_DATA_URI,
   },
   {
     id: 'gal-5',

@@ -9,7 +9,7 @@ export interface Translations {
     reputation: string;
     findUs: string;
     contact: string;
-    whatsappCta: string;
+    callCta: string;
   };
   hero: {
     badge: string;
@@ -78,7 +78,6 @@ export interface Translations {
     openNow: string;
     closedNow: string;
     phoneTitle: string;
-    whatsappTitle: string;
     getDirections: string;
     callNow: string;
   };
@@ -98,7 +97,6 @@ export interface Translations {
     description: string;
     close: string;
   };
-  whatsappMsg: string;
 }
 
 export const translations: Record<Language, Translations> = {
@@ -111,7 +109,7 @@ export const translations: Record<Language, Translations> = {
       reputation: 'Avis',
       findUs: 'Nous trouver',
       contact: 'Contact',
-      whatsappCta: 'Contact WhatsApp',
+      callCta: '0537 660 057',
     },
     hero: {
       badge: 'Depuis 1957 à Rabat Diour Jamaa',
@@ -176,11 +174,10 @@ export const translations: Record<Language, Translations> = {
       addressTitle: 'Adresse du Restaurant',
       addressValue: 'Avenue Al Ghazali, Imm. Frej N2, Diour Jamaa, Rabat, Maroc',
       hoursTitle: 'Horaires d’Ouverture',
-      hoursValue: 'Tous les jours : 07h00 – 00h00 (Service continu)',
+      hoursValue: 'Tous les jours : 07h00 – 23h00 (Service continu)',
       openNow: 'OUVERT ACTUELLEMENT',
       closedNow: 'FERMÉ ACTUELLEMENT',
       phoneTitle: 'Téléphone & Hotline',
-      whatsappTitle: 'Contact direct WhatsApp',
       getDirections: 'Ouvrir sur Google Maps',
       callNow: 'Appeler le 0537 660 057',
     },
@@ -196,11 +193,10 @@ export const translations: Record<Language, Translations> = {
       company: 'Ba Fares 1957 — Restaurant Traditionnel',
       address: 'Avenue Al Ghazali, Imm. Frej N2, Diour Jamaa, Rabat, Maroc',
       phone: '0537 660 057',
-      hours: 'Lundi au Dimanche de 07h00 à 00h00',
+      hours: 'Lundi au Dimanche de 07h00 à 23h00',
       description: 'Ba Fares est un établissement traditionnel spécialisé dans le petit-déjeuner marocain, les plats cuisinés et les pâtisseries artisanales à Rabat depuis 1957. Ce site est un site vitrine informatif.',
       close: 'Fermer',
     },
-    whatsappMsg: 'Bonjour, je souhaite avoir des informations sur le restaurant Ba Fares (menus, horaires, réservation de table)...',
   },
   ar: {
     nav: {
@@ -211,7 +207,7 @@ export const translations: Record<Language, Translations> = {
       reputation: 'آراء الزبناء',
       findUs: 'موقعنا',
       contact: 'اتصل بنا',
-      whatsappCta: 'واتساب مباشر',
+      callCta: '0537 660 057',
     },
     hero: {
       badge: 'منذ عام 1957 في الرباط - ديور الجامع',
@@ -276,11 +272,10 @@ export const translations: Record<Language, Translations> = {
       addressTitle: 'عنوان المطعم',
       addressValue: 'شارع الغزالي، عمارة فريج رقم 2، ديور الجامع، الرباط، المغرب',
       hoursTitle: 'أوقات العمل',
-      hoursValue: 'يومياً : من 07:00 صباحاً حتى 00:00 ليلاً (خدمة مستمرة)',
+      hoursValue: 'يومياً : من 07:00 صباحاً حتى 23:00 ليلاً (خدمة مستمرة)',
       openNow: 'مفتوح الآن',
       closedNow: 'مغلق حالياً',
       phoneTitle: 'الهاتف المباشر',
-      whatsappTitle: 'تواصل مباشر عبر الواتساب',
       getDirections: 'فتح في خرائط جوجل',
       callNow: 'الاتصال بـ 0537660057',
     },
@@ -296,11 +291,10 @@ export const translations: Record<Language, Translations> = {
       company: 'با فارس 1957 — مطعم تقليدي',
       address: 'شارع الغزالي، عمارة فريج رقم 2، ديور الجامع، الرباط، المغرب',
       phone: '0537 660 057',
-      hours: 'من الاثنين إلى الأحد من 07:00 إلى 00:00',
+      hours: 'من الاثنين إلى الأحد من 07:00 إلى 23:00',
       description: 'با فارس مؤسسة تقليدية متخصصة في الفطور المغربي والأطباق التقليدية والحلويات العريقة بالرباط منذ 1957. هذا الموقع إعلامي فقط.',
       close: 'إغلاق',
     },
-    whatsappMsg: 'السلام عليكم، أرغب في الاستفسار عن مطعم با فارس (قائمة الطعام، أوقات العمل)...',
   },
   en: {
     nav: {
@@ -311,7 +305,7 @@ export const translations: Record<Language, Translations> = {
       reputation: 'Reviews',
       findUs: 'Find Us',
       contact: 'Contact',
-      whatsappCta: 'WhatsApp Direct',
+      callCta: '0537 660 057',
     },
     hero: {
       badge: 'Since 1957 in Rabat Diour Jamaa',
@@ -376,11 +370,10 @@ export const translations: Record<Language, Translations> = {
       addressTitle: 'Restaurant Address',
       addressValue: 'Avenue Al Ghazali, Imm. Frej N2, Diour Jamaa, Rabat, Morocco',
       hoursTitle: 'Opening Hours',
-      hoursValue: 'Every day: 07:00 AM – 12:00 AM Midnight (Non-stop service)',
+      hoursValue: 'Every day: 07:00 AM – 11:00 PM (Non-stop service)',
       openNow: 'OPEN NOW',
       closedNow: 'CLOSED NOW',
       phoneTitle: 'Direct Hotline',
-      whatsappTitle: 'Direct WhatsApp Contact',
       getDirections: 'Open in Google Maps',
       callNow: 'Call 0537 660 057',
     },
@@ -396,10 +389,9 @@ export const translations: Record<Language, Translations> = {
       company: 'Ba Fares 1957 — Traditional Restaurant',
       address: 'Avenue Al Ghazali, Imm. Frej N2, Diour Jamaa, Rabat, Morocco',
       phone: '0537 660 057',
-      hours: 'Monday to Sunday from 07:00 AM to 12:00 AM',
+      hours: 'Monday to Sunday from 07:00 AM to 11:00 PM',
       description: 'Ba Fares is a traditional establishment specializing in Moroccan breakfast, home-style meals, and artisanal pastries in Rabat since 1957. This website is purely informational.',
       close: 'Close',
     },
-    whatsappMsg: 'Hello, I would like to get information about Ba Fares restaurant (menus, opening hours)...',
   },
 };

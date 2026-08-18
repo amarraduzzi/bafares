@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Sparkles, MessageCircle, Heart, Tag, Info } from 'lucide-react';
+import { X, Sparkles, Phone, Tag, Info } from 'lucide-react';
 import { MenuItem, Language } from '../types';
 import { translations } from '../data/translations';
 
@@ -17,9 +17,6 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({ item, lang, on
   const name = lang === 'ar' ? item.nameAr : lang === 'en' ? item.nameEn : item.nameFr;
   const desc = lang === 'ar' ? item.descAr : lang === 'en' ? item.descEn : item.descFr;
   const tag = lang === 'ar' ? item.tagAr : lang === 'en' ? item.tagEn : item.tagFr;
-
-  const whatsappMsg = `Bonjour Ba Fares, je souhaite des informations sur le plat : ${item.nameFr}`;
-  const whatsappUrl = `https://wa.me/212537660057?text=${encodeURIComponent(whatsappMsg)}`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#3B1F0F]/60 backdrop-blur-xs animate-in fade-in duration-200">
@@ -106,13 +103,11 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({ item, lang, on
           </button>
 
           <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:0537660057"
             className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-[#3B1F0F] bg-[#F2C230] hover:bg-[#D8A517] transition-all shadow-xs"
           >
-            <MessageCircle className="w-4 h-4 fill-[#3B1F0F] text-[#F2C230]" />
-            <span>Demander via WhatsApp</span>
+            <Phone className="w-4 h-4 text-[#3B1F0F]" />
+            <span>{t.findUs.callNow}</span>
           </a>
         </div>
 

@@ -92,34 +92,6 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
               {/* Outer Golden Aura Glow */}
               <div className="absolute inset-0 rounded-3xl bg-[#FFFDF9]/50 blur-2xl transform scale-105 -z-10 pointer-events-none" />
 
-              {/* Animated Floating Steam Volutes SVG */}
-              <div className="absolute -top-10 sm:-top-14 left-1/2 -translate-x-1/2 w-40 sm:w-56 h-24 pointer-events-none z-20 overflow-visible">
-                <svg viewBox="0 0 100 80" fill="none" className="w-full h-full">
-                  <path
-                    d="M25 65 C 18 45, 32 35, 22 15 C 16 5, 20 8, 12 0"
-                    stroke="#3B1F0F"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    className="animate-steam-1"
-                  />
-                  <path
-                    d="M50 72 C 40 50, 58 38, 48 18 C 42 8, 44 10, 38 0"
-                    stroke="#3B1F0F"
-                    strokeWidth="3.5"
-                    strokeLinecap="round"
-                    className="animate-steam-2"
-                  />
-                  <path
-                    d="M75 65 C 68 48, 82 35, 72 15 C 66 5, 70 8, 62 0"
-                    stroke="#3B1F0F"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    className="animate-steam-1"
-                    style={{ animationDelay: '1.4s' }}
-                  />
-                </svg>
-              </div>
-
               {/* Main Hero Mascot Image Card with Respiration Pulse Animation */}
               <div className="animate-logo-breath relative w-full rounded-3xl p-2.5 sm:p-3 bg-[#FFFDF9] border-4 sm:border-6 border-[#3B1F0F] shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
                 

@@ -4,7 +4,6 @@ import {
   Menu,
   X,
   Phone,
-  MessageCircle,
   Globe,
   ChevronDown,
   Home,
@@ -81,8 +80,6 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang }) => {
     { href: '#nous-trouver', label: t.nav.findUs, icon: MapPin },
   ];
 
-  const whatsappUrl = `https://wa.me/212537660057?text=${encodeURIComponent(t.whatsappMsg)}`;
-
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-[#FAF6EE]/90 border-b border-[#EADBC4] transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,11 +103,16 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang }) => {
               <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#3B1F0F] font-serif group-hover:text-[#D8A517] transition-colors">
                 BA FARES
               </span>
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">
                 <span className="text-[10px] sm:text-xs uppercase tracking-wider font-semibold text-[#8C5E3C] bg-[#F2E9D8] px-1.5 py-0.5 rounded">
                   {lang === 'ar' ? 'منذ 1957' : 'Depuis 1957'}
                 </span>
-                <span className="text-[10px] text-[#D8A517] font-semibold">★ Rabat</span>
+                <div className="flex items-center gap-0.5 text-[#D8A517]" aria-label="5 stars">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-[#D8A517] text-[#D8A517]" />
+                  ))}
+                </div>
+                <span className="text-[10px] sm:text-xs text-[#8C5E3C] font-semibold">Rabat</span>
               </div>
             </div>
           </a>
@@ -133,7 +135,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang }) => {
             ))}
           </nav>
 
-          {/* Actions: Lang selector & WhatsApp CTA */}
+          {/* Actions: Lang selector & Call CTA */}
           <div className="hidden sm:flex items-center gap-3">
             
             {/* Language Dropdown */}
@@ -178,15 +180,14 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang }) => {
               )}
             </div>
 
-            {/* WhatsApp CTA Button */}
+            {/* Phone Call CTA Button */}
             <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="tel:0537660057"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-[#3B1F0F] bg-[#F2C230] hover:bg-[#D8A517] shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              aria-label="Call 0537 660 057"
             >
-              <MessageCircle className="w-4 h-4 fill-[#3B1F0F] text-[#F2C230]" />
-              <span>{t.nav.whatsappCta}</span>
+              <Phone className="w-4 h-4 text-[#3B1F0F]" />
+              <span>{t.nav.callCta}</span>
             </a>
           </div>
 
@@ -362,25 +363,13 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang }) => {
                   transition={{ delay: 0.32, duration: 0.22 }}
                   className="space-y-2.5"
                 >
-                  {/* WhatsApp CTA Button with Gentle Pulsing Aura */}
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative group w-full flex items-center justify-center gap-2.5 py-3.5 px-4 rounded-2xl text-sm font-extrabold text-[#3B1F0F] bg-[#F2C230] border-2 border-[#3B1F0F] shadow-md hover:shadow-xl transition-all duration-300 transform active:scale-98 overflow-hidden"
-                  >
-                    <span className="absolute inset-0 bg-white/20 animate-pulse pointer-events-none" />
-                    <MessageCircle className="w-5 h-5 fill-[#3B1F0F] text-[#F2C230] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 z-10" />
-                    <span className="z-10">{t.nav.whatsappCta}</span>
-                  </a>
-
-                  {/* Hotline Phone Button */}
+                  {/* Phone Call Button */}
                   <a
                     href="tel:0537660057"
-                    className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-2xl text-xs font-extrabold text-[#3B1F0F] bg-[#FFFDF9] border border-[#EADBC4] hover:border-[#D8A517] hover:bg-[#FAF0D7]/60 transition-all shadow-xs"
+                    className="w-full flex items-center justify-center gap-2.5 py-3.5 px-4 rounded-2xl text-sm font-extrabold text-[#3B1F0F] bg-[#F2C230] hover:bg-[#D8A517] border-2 border-[#3B1F0F] shadow-md hover:shadow-xl transition-all duration-300 transform active:scale-98"
                   >
-                    <Phone className="w-4 h-4 text-[#D8A517]" />
-                    <span>0537 660 057 (Hotline Rabat Diour Jamaa)</span>
+                    <Phone className="w-4 h-4 text-[#3B1F0F]" />
+                    <span>{t.findUs.callNow}</span>
                   </a>
                 </motion.div>
               </div>

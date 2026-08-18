@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Clock, Phone, MessageCircle, ExternalLink, Navigation } from 'lucide-react';
+import { MapPin, Clock, Phone, ExternalLink } from 'lucide-react';
 import { Language } from '../types';
 import { translations } from '../data/translations';
 
@@ -12,14 +12,14 @@ export const FindUsSection: React.FC<FindUsSectionProps> = ({ lang }) => {
 
   const [isOpenNow, setIsOpenNow] = useState(true);
 
-  // Check live open/closed status for Rabat hours (07:00 - 00:00)
+  // Check live open/closed status for Rabat hours (07:00 - 23:00)
   useEffect(() => {
     const checkStatus = () => {
       const now = new Date();
       // Get current hour in local/Rabat time (0-23)
       const currentHour = now.getHours();
-      // Open between 07:00 and 23:59
-      if (currentHour >= 7 && currentHour < 24) {
+      // Open between 07:00 and 22:59 (closes at 23:00)
+      if (currentHour >= 7 && currentHour < 23) {
         setIsOpenNow(true);
       } else {
         setIsOpenNow(false);
@@ -32,7 +32,6 @@ export const FindUsSection: React.FC<FindUsSectionProps> = ({ lang }) => {
 
   const address = 'Avenue Al Ghazali, Imm. Frej N2, Diour Jamaa, Rabat, Maroc';
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('Ba Fares Avenue Al Ghazali Imm Frej Diour Jamaa Rabat')}`;
-  const whatsappUrl = `https://wa.me/212537660057?text=${encodeURIComponent(t.whatsappMsg)}`;
 
   return (
     <section id="nous-trouver" className="py-20 bg-[#FFFDF9] border-t border-[#EADBC4] relative">
@@ -70,8 +69,8 @@ export const FindUsSection: React.FC<FindUsSectionProps> = ({ lang }) => {
                   </span>
                   <span className="text-[11px] text-[#8C5E3C] font-medium">
                     {isOpenNow
-                      ? (lang === 'ar' ? 'يغلق الساعة 00:00 ليلاً' : 'Ferme à 00h00')
-                      : (lang === 'ar' ? 'يفتح الساعة 07:00 صباحاً' : 'Ouvre à 07h00')}
+                      ? (lang === 'ar' ? 'يغلق الساعة 23:00 ليلاً' : lang === 'en' ? 'Closes at 11:00 PM' : 'Ferme à 23h00')
+                      : (lang === 'ar' ? 'يفتح الساعة 07:00 صباحاً' : lang === 'en' ? 'Opens at 07:00 AM' : 'Ouvre à 07h00')}
                   </span>
                 </div>
               </div>
@@ -116,16 +115,6 @@ export const FindUsSection: React.FC<FindUsSectionProps> = ({ lang }) => {
               </a>
 
               <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-[#3B1F0F] bg-[#FFFDF9] border border-[#EADBC4] hover:bg-[#F2E9D8] transition-all"
-              >
-                <MessageCircle className="w-4 h-4 text-emerald-600" />
-                <span>{t.findUs.whatsappTitle}</span>
-              </a>
-
-              <a
                 href={googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -143,7 +132,7 @@ export const FindUsSection: React.FC<FindUsSectionProps> = ({ lang }) => {
           <div className="lg:col-span-7 rounded-3xl overflow-hidden border-2 border-[#EADBC4] shadow-md min-h-[380px] bg-[#FAF6EE] relative group">
             <iframe
               title="Google Map Ba Fares Rabat"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.288924089018!2d-6.852109!3d34.010899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76c8c4b1234567%3A0x123456789abcdef!2sAvenue%20Al%20Ghazali%2C%20Rabat!5e0!3m2!1sfr!2sma!4v1700000000000!5m2!1sfr!2sma"
+              src="https://www.google.com/maps?q=Avenue+Al+Ghazali+Imm+Frej+N2+Diour+Jamaa+Rabat+Maroc&output=embed"
               className="w-full h-full min-h-[380px] border-0 filter contrast-[1.02] grayscale-[10%]"
               allowFullScreen={false}
               loading="lazy"

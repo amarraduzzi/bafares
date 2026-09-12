@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { motion } from 'motion/react';
-import { Search, Info, Sparkles, Utensils, Star } from 'lucide-react';
+import { Search, Info, Utensils, Star } from 'lucide-react';
 import { CategoryId, MenuItem, Language } from '../types';
 import { MENU_ITEMS } from '../data/menuData';
 import { translations } from '../data/translations';
@@ -10,49 +9,83 @@ interface MenuSectionProps {
   lang: Language;
 }
 
+const CATEGORY_ORDER: CategoryId[] = [
+  'breakfast',
+  'beldi',
+  'harcha_rghifa',
+  'crepes',
+  'omelettes',
+  'sales',
+  'laitiers',
+  'supplements',
+  'juices',
+  'drinks',
+];
+
+const CATEGORY_ICONS: Record<CategoryId, string> = {
+  all: '🍽️',
+  breakfast: '🍳',
+  beldi: '🍲',
+  harcha_rghifa: '🥞',
+  crepes: '🧇',
+  omelettes: '🍳',
+  sales: '🥟',
+  laitiers: '🍮',
+  supplements: '🧈',
+  juices: '🍊',
+  drinks: '☕',
+};
+
 export const MenuSection: React.FC<MenuSectionProps> = ({ lang }) => {
   const [activeCategory, setActiveCategory] = useState<CategoryId>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDish, setSelectedDish] = useState<MenuItem | null>(null);
 
   const t = translations[lang];
+  const isAr = lang === 'ar';
 
   const categories: { id: CategoryId; label: string; icon: string }[] = [
-    { id: 'all', label: t.menu.categories.all, icon: '🍽️' },
-    { id: 'breakfast', label: t.menu.categories.breakfast, icon: '🍳' },
-    { id: 'beldi', label: t.menu.categories.beldi, icon: '🍲' },
-    { id: 'harcha_rghifa', label: t.menu.categories.harcha_rghifa, icon: '🥞' },
-    { id: 'crepes', label: t.menu.categories.crepes, icon: '🧇' },
-    { id: 'omelettes', label: t.menu.categories.omelettes, icon: '🍳' },
-    { id: 'sales', label: t.menu.categories.sales, icon: '🥟' },
-    { id: 'laitiers', label: t.menu.categories.laitiers, icon: '🍮' },
-    { id: 'supplements', label: t.menu.categories.supplements, icon: '🧈' },
-    { id: 'juices', label: t.menu.categories.juices, icon: '🍊' },
-    { id: 'drinks', label: t.menu.categories.drinks, icon: '☕' },
+    { id: 'all', label: t.menu.categories.all, icon: CATEGORY_ICONS.all },
+    ...CATEGORY_ORDER.map((id) => ({
+      id,
+      label: t.menu.categories[id as Exclude<CategoryId, 'all'>],
+      icon: CATEGORY_ICONS[id],
+    })),
   ];
 
-  const filteredItems = useMemo(() => {
-    return MENU_ITEMS.filter((item) => {
-      const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
-      const query = searchQuery.toLowerCase().trim();
-      if (!query) return matchesCategory;
+  const query = searchQuery.toLowerCase().trim();
 
-      const matchesSearch =
-        item.nameFr.toLowerCase().includes(query) ||
-        item.nameAr.includes(query) ||
-        item.nameEn.toLowerCase().includes(query) ||
-        item.descFr.toLowerCase().includes(query) ||
-        item.descAr.includes(query);
+  const matchesSearch = (item: MenuItem) => {
+    if (!query) return true;
+    return (
+      item.nameFr.toLowerCase().includes(query) ||
+      item.nameAr.includes(query) ||
+      item.nameEn.toLowerCase().includes(query) ||
+      item.descFr.toLowerCase().includes(query) ||
+      item.descAr.includes(query)
+    );
+  };
 
-      return matchesCategory && matchesSearch;
-    });
-  }, [activeCategory, searchQuery]);
+  const groups = useMemo(() => {
+    return CATEGORY_ORDER
+      .filter((catId) => activeCategory === 'all' || activeCategory === catId)
+      .map((catId) => ({
+        catId,
+        label: t.menu.categories[catId as Exclude<CategoryId, 'all'>],
+        icon: CATEGORY_ICONS[catId],
+        items: MENU_ITEMS.filter((item) => item.category === catId && matchesSearch(item)),
+      }))
+      .filter((g) => g.items.length > 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeCategory, searchQuery, lang]);
+
+  const totalResults = groups.reduce((sum, g) => sum + g.items.length, 0);
 
   return (
     <section id="menu" className="py-20 bg-[#FAF6EE] relative overflow-hidden">
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FFFDF9] border border-[#EADBC4] text-xs font-bold text-[#D8A517] shadow-2xs">
@@ -68,7 +101,6 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ lang }) => {
             {t.menu.subtitle}
           </p>
 
-          {/* Informational Banner (Strictly NO Cart) */}
           <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#F2E9D8] border border-[#EADBC4] text-xs font-medium text-[#3B1F0F]">
             <Info className="w-4 h-4 text-[#D8A517] shrink-0" />
             <span>{t.menu.notice}</span>
@@ -76,9 +108,8 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ lang }) => {
         </div>
 
         {/* Search Bar & Category Filters */}
-        <div className="space-y-6 mb-12">
-          
-          {/* Search Input */}
+        <div className="space-y-6 mb-10">
+
           <div className="max-w-md mx-auto relative">
             <div className="absolute inset-y-0 left-0 rtl:right-0 rtl:left-auto pl-3.5 rtl:pr-3.5 flex items-center pointer-events-none">
               <Search className="w-4 h-4 text-[#8C5E3C]" />
@@ -90,17 +121,8 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ lang }) => {
               placeholder={t.menu.searchPlaceholder}
               className="w-full pl-10 rtl:pr-10 rtl:pl-3.5 pr-4 py-3 bg-[#FFFDF9] border border-[#EADBC4] focus:border-[#F2C230] focus:ring-2 focus:ring-[#F2C230]/30 rounded-2xl text-sm text-[#3B1F0F] placeholder-[#8C5E3C]/60 shadow-xs outline-none transition-all"
             />
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery('')}
-                className="absolute inset-y-0 right-0 rtl:left-0 rtl:right-auto pr-3 rtl:pl-3 flex items-center text-xs text-[#8C5E3C] hover:text-[#3B1F0F]"
-              >
-                Effacer
-              </button>
-            )}
           </div>
 
-          {/* Category Tabs */}
           <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-3 pt-1 scrollbar-none">
             {categories.map((cat) => {
               const isActive = activeCategory === cat.id;
@@ -123,14 +145,14 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ lang }) => {
 
         </div>
 
-        {/* Menu Items Grid */}
-        {filteredItems.length === 0 ? (
+        {/* Menu List — printed-card style, no images */}
+        {totalResults === 0 ? (
           <div className="text-center py-16 bg-[#FFFDF9] rounded-3xl border border-[#EADBC4] p-8 max-w-md mx-auto">
             <p className="text-base font-bold text-[#3B1F0F]">
-              {lang === 'ar' ? 'لم يتم العثور على أطباق مطابقة للبحث' : 'Aucun plat ne correspond à votre recherche'}
+              {isAr ? 'لم يتم العثور على أطباق مطابقة للبحث' : 'Aucun plat ne correspond à votre recherche'}
             </p>
             <p className="text-xs text-[#8C5E3C] mt-2">
-              {lang === 'ar' ? 'يرجى تغيير كلمة البحث أو اختيار تصنيف آخر.' : 'Essayez un autre mot-clé ou sélectionnez une autre catégorie.'}
+              {isAr ? 'يرجى تغيير كلمة البحث أو اختيار تصنيف آخر.' : 'Essayez un autre mot-clé ou sélectionnez une autre catégorie.'}
             </p>
             <button
               onClick={() => {
@@ -143,79 +165,53 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ lang }) => {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {filteredItems.map((item, index) => {
-              const name = lang === 'ar' ? item.nameAr : lang === 'en' ? item.nameEn : item.nameFr;
-              const desc = lang === 'ar' ? item.descAr : lang === 'en' ? item.descEn : item.descFr;
-              const tag = lang === 'ar' ? item.tagAr : lang === 'en' ? item.tagEn : item.tagFr;
+          <div className="bg-[#FFFDF9] rounded-3xl border-2 border-[#EADBC4] shadow-sm p-6 sm:p-10">
+            {groups.map((group, gIndex) => (
+              <div key={group.catId} className={gIndex > 0 ? 'mt-10' : ''}>
+                {/* Category Heading */}
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="text-2xl leading-none">{group.icon}</span>
+                  <h3 className="text-xl sm:text-2xl font-black text-[#3B1F0F] font-serif tracking-tight">
+                    {group.label}
+                  </h3>
+                  <div className="flex-1 h-px bg-[#EADBC4]" />
+                </div>
 
-              return (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  onClick={() => setSelectedDish(item)}
-                  className="bg-[#FFFDF9] rounded-3xl border-2 border-[#EADBC4] hover:border-[#F2C230] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col cursor-pointer group transform hover:-translate-y-1"
-                >
-                  {/* Card Thumbnail Frame */}
-                  <div className="relative h-52 w-full overflow-hidden bg-[#FAF6EE]">
-                    <img
-                      src={item.image}
-                      alt={name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#3B1F0F]/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                {/* Item List — two print columns on larger screens */}
+                <div className="sm:columns-2 gap-x-10">
+                  {group.items.map((item) => {
+                    const name = isAr ? item.nameAr : lang === 'en' ? item.nameEn : item.nameFr;
+                    const tag = isAr ? item.tagAr : lang === 'en' ? item.tagEn : item.tagFr;
 
-                    {/* Tag Badge */}
-                    {tag && (
-                      <div className="absolute top-3 left-3 rtl:right-3 rtl:left-auto bg-[#FAF6EE]/90 backdrop-blur-xs text-[#3B1F0F] text-[11px] font-bold px-2.5 py-1 rounded-full border border-[#EADBC4] shadow-2xs">
-                        {tag}
-                      </div>
-                    )}
-
-                    {/* Popular Badge */}
-                    {item.popular && (
-                      <div className="absolute top-3 right-3 rtl:left-3 rtl:right-auto bg-[#F2C230] text-[#3B1F0F] text-[10px] font-extrabold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-xs uppercase tracking-wider">
-                        <Star className="w-3 h-3 fill-[#3B1F0F]" />
-                        <span>Populaire</span>
-                      </div>
-                    )}
-
-                    {/* Price Tag Overlay */}
-                    <div className="absolute bottom-3 left-3 rtl:right-3 rtl:left-auto bg-[#F2C230] text-[#3B1F0F] font-black text-sm px-3 py-1 rounded-full shadow-md font-serif">
-                      {item.price} {t.menu.dh}
-                    </div>
-                  </div>
-
-                  {/* Card Content */}
-                  <div className="p-5 flex-1 flex flex-col justify-between space-y-3 text-start">
-                    <div>
-                      <h3 className="text-lg font-bold text-[#3B1F0F] font-serif group-hover:text-[#D8A517] transition-colors leading-snug">
-                        {name}
-                      </h3>
-                      {lang !== 'ar' && (
-                        <p className="text-xs font-semibold text-[#8C5E3C] font-serif mt-0.5" dir="rtl">
-                          {item.nameAr}
-                        </p>
-                      )}
-                      <p className="text-xs text-[#5A321B] mt-2 line-clamp-2 leading-relaxed">
-                        {desc}
-                      </p>
-                    </div>
-
-                    <div className="pt-2 border-t border-[#EADBC4]/60 flex items-center justify-between text-xs font-bold text-[#D8A517] group-hover:text-[#3B1F0F] transition-colors">
-                      <span>{t.menu.viewDetails}</span>
-                      <span className="text-base transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">
-                        →
-                      </span>
-                    </div>
-                  </div>
-
-                </motion.div>
-              );
-            })}
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => setSelectedDish(item)}
+                        className="w-full flex items-baseline gap-1.5 py-2.5 text-start break-inside-avoid focus:outline-none group"
+                      >
+                        <span className="shrink-0 flex items-center gap-1.5 max-w-[62%] sm:max-w-[65%]">
+                          <span className="text-[15px] sm:text-base font-semibold text-[#3B1F0F] group-hover:text-[#D8A517] transition-colors font-serif truncate">
+                            {name}
+                          </span>
+                          {item.popular && (
+                            <Star className="w-3.5 h-3.5 fill-[#F2C230] text-[#F2C230] shrink-0" />
+                          )}
+                          {tag && (
+                            <span className="hidden sm:inline text-[10px] font-bold text-[#D8A517] uppercase tracking-wide shrink-0">
+                              {tag}
+                            </span>
+                          )}
+                        </span>
+                        <span className="flex-1 border-b border-dotted border-[#C9B48A] translate-y-[-3px]" />
+                        <span className="shrink-0 text-[15px] sm:text-base font-bold text-[#3B1F0F] font-serif">
+                          {item.price} {t.menu.dh}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
           </div>
         )}
 

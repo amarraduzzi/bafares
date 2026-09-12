@@ -31,7 +31,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Harcha, rghaif, fresh cheese, honey, olives, orange juice, a hot drink, belboula bread and bottled water.',
     category: 'breakfast',
     price: 42,
-    image: FULL_BREAKFAST_DATA_URI,
   },
   {
     id: 'chamali',
@@ -43,7 +42,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Two fried eggs, cold cuts, fresh cheese, honey, black olives, orange juice, belboula bread and bottled water.',
     category: 'breakfast',
     price: 44,
-    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'berbere',
@@ -55,7 +53,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Taktouka omelette, fresh cheese, honey, olives, orange juice, belboula bread and bottled water.',
     category: 'breakfast',
     price: 45,
-    image: 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'fassi',
@@ -67,7 +64,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Khlii tagine, honey, fresh cheese, olives, orange juice, belboula bread and bottled water.',
     category: 'breakfast',
     price: 49,
-    image: 'https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80',
     tagFr: 'Fassi Authentique',
     tagAr: 'أصالة فاس',
     tagEn: 'Authentic Fassi',
@@ -82,7 +78,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Omelette of your choice (plain, cheese or berber-style), harcha, rghaif, fresh cheese, honey, olives, orange juice, belboula bread and bottled water.',
     category: 'breakfast',
     price: 55,
-    image: CHEF_TRAY_DATA_URI,
     tagFr: 'Spécialité Maison',
     tagAr: 'تخصص الدار',
     tagEn: 'House Specialty',
@@ -100,7 +95,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Our traditional slow-simmered harira soup, served as a full bowl every evening.',
     category: 'beldi',
     price: 15,
-    image: HARIRA_DATA_URI,
     tagFr: 'Chaque Soir',
     tagAr: 'كل مساء',
     tagEn: 'Every Evening',
@@ -116,7 +110,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Soft trid pastry soaked in fenugreek broth with free-range chicken, every Wednesday.',
     category: 'beldi',
     price: 60,
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
     tagFr: 'Chaque Mercredi',
     tagAr: 'كل يوم أربعاء',
     tagEn: 'Every Wednesday',
@@ -131,7 +124,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Hand-rolled couscous with free-range chicken and seasonal vegetables, every Friday.',
     category: 'beldi',
     price: 55,
-    image: COUSCOUS_DATA_URI,
     tagFr: 'Chaque Vendredi',
     tagAr: 'كل يوم جمعة',
     tagEn: 'Every Friday',
@@ -147,7 +139,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Hand-rolled couscous with tender veal and seasonal vegetables, every Friday.',
     category: 'beldi',
     price: 60,
-    image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=800&q=80',
     tagFr: 'Chaque Vendredi',
     tagAr: 'كل يوم جمعة',
     tagEn: 'Every Friday',
@@ -164,7 +155,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Golden semolina harcha filled with fresh cheese and melting red cheese.',
     category: 'harcha_rghifa',
     price: 16,
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'harcha-nutella',
@@ -176,7 +166,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Warm harcha generously spread with Nutella.',
     category: 'harcha_rghifa',
     price: 12,
-    image: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=800&q=80',
     popular: true,
   },
   {
@@ -189,7 +178,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Traditional harcha drizzled with melted butter and pure honey.',
     category: 'harcha_rghifa',
     price: 10,
-    image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'rghifa-jben-fromage-rouge',
@@ -201,7 +189,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Layered Moroccan pancake filled with fresh cheese and melting red cheese.',
     category: 'harcha_rghifa',
     price: 18,
-    image: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'rghifa-nutella',
@@ -213,7 +200,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Warm rghifa topped with Nutella.',
     category: 'harcha_rghifa',
     price: 14,
-    image: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=800&q=80',
     popular: true,
   },
   {
@@ -226,7 +212,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Rghifa filled with khlii, traditional preserved spiced beef.',
     category: 'harcha_rghifa',
     price: 9,
-    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'rghifa-beurre-miel',
@@ -238,7 +223,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Soft rghifa drizzled with melted butter and pure honey.',
     category: 'harcha_rghifa',
     price: 12,
-    image: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'rghifa-kiri-luncheon',
@@ -250,7 +234,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Rghifa filled with melting Kiri cheese and luncheon meat.',
     category: 'harcha_rghifa',
     price: 15,
-    image: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'rghifa-fromage-rouge-luncheon',
@@ -262,7 +245,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Rghifa generously filled with melting red cheese and luncheon meat.',
     category: 'harcha_rghifa',
     price: 20,
-    image: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'rghifa-jben-luncheon',
@@ -274,7 +256,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Rghifa filled with fresh cheese and luncheon meat.',
     category: 'harcha_rghifa',
     price: 17,
-    image: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'rghifa-fromage-rouge',
@@ -286,7 +267,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Rghifa filled with melting red cheese.',
     category: 'harcha_rghifa',
     price: 16,
-    image: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80',
   },
 
   // ===================== CRÊPES & GALETTES =====================
@@ -300,7 +280,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Thin crêpe generously spread with Nutella.',
     category: 'crepes',
     price: 25,
-    image: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'crepe-nutella-banane',
@@ -312,7 +291,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Crêpe filled with Nutella and slices of fresh banana.',
     category: 'crepes',
     price: 30,
-    image: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=800&q=80',
     popular: true,
   },
   {
@@ -325,7 +303,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Crêpe filled with cream and crushed Oreo biscuits.',
     category: 'crepes',
     price: 30,
-    image: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'crepe-kunafa-pistache',
@@ -337,7 +314,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Crêpe filled with crispy kunafa and crushed pistachios.',
     category: 'crepes',
     price: 35,
-    image: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=800&q=80',
     tagFr: 'Signature',
     tagAr: 'مميز',
     tagEn: 'Signature',
@@ -352,7 +328,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Savory galette filled with slow-cooked chicken and melted cheese.',
     category: 'crepes',
     price: 35,
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'crepe-poulet-charcuterie',
@@ -364,7 +339,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Savory galette filled with chicken, cold cuts and melted cheese.',
     category: 'crepes',
     price: 40,
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'crepe-fromage-charcuterie',
@@ -376,7 +350,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Savory galette filled with melted cheese and cold cuts.',
     category: 'crepes',
     price: 38,
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=800&q=80',
   },
 
   // ===================== NOS OMELETTES =====================
@@ -390,7 +363,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Soft omelette made with farm-fresh eggs, cooked to order.',
     category: 'omelettes',
     price: 18,
-    image: 'https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'omelette-fromage',
@@ -402,7 +374,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Soft omelette filled with melted cheese.',
     category: 'omelettes',
     price: 24,
-    image: 'https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'omelette-fromage-luncheon',
@@ -414,7 +385,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Omelette filled with melted cheese and luncheon meat.',
     category: 'omelettes',
     price: 28,
-    image: 'https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'omelette-khlii',
@@ -426,7 +396,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Omelette with khlii, traditional preserved spiced beef, served in its own tagine.',
     category: 'omelettes',
     price: 32,
-    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80',
     tagFr: 'Fassi Authentique',
     tagAr: 'أصالة فاس',
     tagEn: 'Authentic Fassi',
@@ -442,7 +411,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Omelette simmered with peppers and tomatoes, taktouka style.',
     category: 'omelettes',
     price: 24,
-    image: 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'omelette-luncheon',
@@ -454,7 +422,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Soft omelette filled with luncheon meat.',
     category: 'omelettes',
     price: 24,
-    image: 'https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'omelette-epinard',
@@ -466,7 +433,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Omelette filled with sautéed spinach.',
     category: 'omelettes',
     price: 24,
-    image: 'https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=800&q=80',
   },
 
   // ===================== LES SALÉS =====================
@@ -480,7 +446,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Crispy pastry parcels filled with chicken flavored with preserved lemon.',
     category: 'sales',
     price: 16,
-    image: 'https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'pastilla-fruits-mer',
@@ -492,7 +457,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Crispy warqa pastry filled with seafood and a light béchamel.',
     category: 'sales',
     price: 30,
-    image: PASTRIES_DATA_URI,
   },
   {
     id: 'pastilla-poulet',
@@ -504,7 +468,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Crispy warqa pastry filled with tender spiced shredded chicken.',
     category: 'sales',
     price: 25,
-    image: 'https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80',
     popular: true,
   },
   {
@@ -517,7 +480,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'A generous slice of house-made pizza, fresh from the oven.',
     category: 'sales',
     price: 14,
-    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'quiche',
@@ -529,7 +491,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'A slice of house-made quiche with a crisp crust and creamy filling.',
     category: 'sales',
     price: 13,
-    image: 'https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'sandwich-poulet-epinard',
@@ -541,7 +502,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Sandwich filled with slow-cooked chicken and tender spinach.',
     category: 'sales',
     price: 23,
-    image: 'https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'nems-poulet-epinard-fromage',
@@ -553,7 +513,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Crispy rolls filled with chicken, spinach and melted cheese.',
     category: 'sales',
     price: 16,
-    image: 'https://images.unsplash.com/photo-1548507200-055f6f27fdca?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'nems-viande-hachee',
@@ -565,7 +524,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Crispy rolls filled with spiced minced meat.',
     category: 'sales',
     price: 16,
-    image: 'https://images.unsplash.com/photo-1548507200-055f6f27fdca?auto=format&fit=crop&w=800&q=80',
   },
 
   // ===================== LAITIERS =====================
@@ -579,7 +537,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Silky milk pudding scented with orange blossom water.',
     category: 'laitiers',
     price: 15,
-    image: 'https://images.unsplash.com/photo-1488900128323-21503983a07e?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'yaourt-fruit',
@@ -591,7 +548,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Fresh yogurt topped with seasonal fruit.',
     category: 'laitiers',
     price: 10,
-    image: 'https://images.unsplash.com/photo-1571212515416-fef01fc43637?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'yaourt-bafares',
@@ -603,7 +559,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: "House-made yogurt with orange blossom, Ba Fares' signature recipe.",
     category: 'laitiers',
     price: 9,
-    image: 'https://images.unsplash.com/photo-1571212515416-fef01fc43637?auto=format&fit=crop&w=800&q=80',
     tagFr: 'Recette Maison',
     tagAr: 'وصفة الدار',
     tagEn: 'House Recipe',
@@ -618,7 +573,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Traditional fermented milk topped with whipped cream.',
     category: 'laitiers',
     price: 9,
-    image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'zabadi',
@@ -630,7 +584,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Plain traditional beldi yogurt, creamy and fresh.',
     category: 'laitiers',
     price: 8,
-    image: 'https://images.unsplash.com/photo-1571212515416-fef01fc43637?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'konafa-creme',
@@ -642,7 +595,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Crispy konafa filled with smooth cream.',
     category: 'laitiers',
     price: 15,
-    image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80',
     popular: true,
   },
   {
@@ -655,7 +607,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'House-made flan topped with golden caramel.',
     category: 'laitiers',
     price: 9,
-    image: 'https://images.unsplash.com/photo-1488900128323-21503983a07e?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'cheese-cake',
@@ -667,7 +618,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'A slice of creamy cheesecake on a biscuit base.',
     category: 'laitiers',
     price: 15,
-    image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80',
   },
 
   // ===================== SUPPLÉMENTS =====================
@@ -681,7 +631,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Fresh beldi cheese, to add to your formula.',
     category: 'supplements',
     price: 6,
-    image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'supp-beurre',
@@ -693,7 +642,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Fresh beldi butter.',
     category: 'supplements',
     price: 6,
-    image: 'https://images.unsplash.com/photo-1589985270958-bf087b2d8ed7?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'supp-amlou',
@@ -705,7 +653,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Almond, argan oil and honey spread, a Moroccan specialty.',
     category: 'supplements',
     price: 5,
-    image: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'supp-miel',
@@ -717,7 +664,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Pure honey.',
     category: 'supplements',
     price: 4,
-    image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'supp-huile-olive',
@@ -729,7 +675,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Local extra virgin olive oil.',
     category: 'supplements',
     price: 5,
-    image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'supp-olive-noire',
@@ -741,7 +686,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Marinated black olives.',
     category: 'supplements',
     price: 5,
-    image: 'https://images.unsplash.com/photo-1611171711912-93bcc2c5f398?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'supp-fromage',
@@ -753,7 +697,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Spreadable cheese portion.',
     category: 'supplements',
     price: 3,
-    image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'supp-luncheon',
@@ -765,7 +708,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Luncheon meat portion.',
     category: 'supplements',
     price: 6,
-    image: 'https://images.unsplash.com/photo-1620921575084-2e2210efe071?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'supp-fromage-rouge',
@@ -777,7 +719,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Portion of melting red-box cheese.',
     category: 'supplements',
     price: 8,
-    image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'supp-fromage-kiri',
@@ -789,7 +730,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Kiri cheese portion.',
     category: 'supplements',
     price: 3,
-    image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'supp-charcuterie',
@@ -801,7 +741,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Assorted cold cuts portion.',
     category: 'supplements',
     price: 8,
-    image: 'https://images.unsplash.com/photo-1620921575084-2e2210efe071?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'supp-nutella',
@@ -813,7 +752,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Nutella portion.',
     category: 'supplements',
     price: 10,
-    image: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=800&q=80',
   },
 
   // ===================== NOS JUS =====================
@@ -827,7 +765,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Freshly squeezed orange juice.',
     category: 'juices',
     price: 18,
-    image: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'jus-carotte',
@@ -839,7 +776,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Freshly pressed carrot juice.',
     category: 'juices',
     price: 22,
-    image: 'https://images.unsplash.com/photo-1610970881699-44a5587cabec?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'jus-banane',
@@ -851,7 +787,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Creamy banana juice made with fresh milk.',
     category: 'juices',
     price: 18,
-    image: 'https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'jus-pomme',
@@ -863,7 +798,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Freshly pressed apple juice.',
     category: 'juices',
     price: 18,
-    image: 'https://images.unsplash.com/photo-1560526860-1f9fcee5ef0e?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'jus-fraise',
@@ -875,7 +809,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Fresh, indulgent strawberry juice.',
     category: 'juices',
     price: 25,
-    image: 'https://images.unsplash.com/photo-1600718374662-0483d2b9da44?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'panache',
@@ -887,7 +820,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Creamy blend of fresh seasonal fruits.',
     category: 'juices',
     price: 25,
-    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=800&q=80',
     popular: true,
   },
   {
@@ -900,7 +832,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Fresh pineapple juice.',
     category: 'juices',
     price: 25,
-    image: 'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'jus-mangue',
@@ -912,7 +843,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Fresh, sweet mango juice.',
     category: 'juices',
     price: 25,
-    image: 'https://images.unsplash.com/photo-1605027990121-cbae9e0642df?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'panache-fruit-sec',
@@ -924,7 +854,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Fresh fruit panaché enriched with dried fruit and nuts.',
     category: 'juices',
     price: 30,
-    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'jus-avocat',
@@ -936,7 +865,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Creamy smoothie with fresh avocado and milk.',
     category: 'juices',
     price: 25,
-    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'avocat-fruit-sec',
@@ -948,7 +876,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Avocado smoothie enriched with almonds and dried fruit.',
     category: 'juices',
     price: 30,
-    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'panache-orange-fruit-sec',
@@ -960,7 +887,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Orange-based panaché enriched with dried fruit and nuts.',
     category: 'juices',
     price: 30,
-    image: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80',
   },
 
   // ===================== NOS BOISSONS =====================
@@ -974,7 +900,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Fresh mint tea, served in a traditional brass teapot.',
     category: 'drinks',
     price: 13,
-    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
     tagFr: 'Art du Thé',
     tagAr: 'فن الشاي',
     tagEn: 'Tea Ritual',
@@ -990,7 +915,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Light, comforting black tea.',
     category: 'drinks',
     price: 7,
-    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'cafe-creme',
@@ -1002,7 +926,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Espresso topped with creamy steamed milk.',
     category: 'drinks',
     price: 13,
-    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'chocolat-chaud',
@@ -1014,7 +937,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Rich and creamy hot chocolate.',
     category: 'drinks',
     price: 13,
-    image: 'https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'the-lipton',
@@ -1026,7 +948,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Lipton black tea, served hot.',
     category: 'drinks',
     price: 12,
-    image: 'https://images.unsplash.com/photo-1523920290228-4f321a939b4c?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'verveine',
@@ -1038,7 +959,6 @@ export const MENU_ITEMS: MenuItem[] = [
     descEn: 'Fresh verbena infusion, mild and fragrant.',
     category: 'drinks',
     price: 12,
-    image: 'https://images.unsplash.com/photo-1523920290228-4f321a939b4c?auto=format&fit=crop&w=800&q=80',
   },
 ];
 

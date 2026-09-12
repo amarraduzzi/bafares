@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Sparkles, Phone, Tag, Info } from 'lucide-react';
+import { X, Sparkles, Phone, Info } from 'lucide-react';
 import { MenuItem, Language } from '../types';
 import { translations } from '../data/translations';
 
@@ -20,54 +20,41 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({ item, lang, on
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#3B1F0F]/60 backdrop-blur-xs animate-in fade-in duration-200">
-      
-      <div className="relative w-full max-w-lg bg-[#FFFDF9] rounded-3xl border-2 border-[#EADBC4] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
-        
-        {/* Top Image Frame */}
-        <div className="relative h-64 w-full shrink-0">
-          <img
-            src={item.image}
-            alt={name}
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#3B1F0F]/80 via-transparent to-transparent" />
 
-          {/* Close Button */}
+      <div className="relative w-full max-w-lg bg-[#FFFDF9] rounded-3xl border-2 border-[#EADBC4] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+
+        {/* Header Band (no image) */}
+        <div className="relative shrink-0 bg-[#F2E9D8] border-b border-[#EADBC4] px-6 pt-6 pb-5">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 rtl:left-4 rtl:right-auto p-2 rounded-full bg-[#FFFDF9]/90 text-[#3B1F0F] hover:bg-[#F2C230] transition-colors focus:outline-none shadow-md"
+            className="absolute top-4 right-4 rtl:left-4 rtl:right-auto p-2 rounded-full bg-[#FFFDF9] text-[#3B1F0F] hover:bg-[#F2C230] transition-colors focus:outline-none shadow-xs"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>
 
-          {/* Price Tag Badge */}
-          <div className="absolute bottom-4 left-4 rtl:right-4 rtl:left-auto bg-[#F2C230] text-[#3B1F0F] font-black text-lg px-4 py-1.5 rounded-full shadow-md font-serif">
-            {item.price} {t.menu.dh}
-          </div>
-
-          {/* Tag Badge */}
           {tag && (
-            <div className="absolute top-4 left-4 rtl:right-4 rtl:left-auto bg-[#FAF6EE]/90 text-[#3B1F0F] text-xs font-bold px-3 py-1 rounded-full border border-[#EADBC4] shadow-xs">
+            <div className="inline-flex mb-2 bg-[#FFFDF9] text-[#3B1F0F] text-xs font-bold px-3 py-1 rounded-full border border-[#EADBC4] shadow-xs">
               {tag}
             </div>
           )}
+
+          <h3 className="text-2xl font-black text-[#3B1F0F] font-serif leading-tight pr-10">
+            {name}
+          </h3>
+          {lang !== 'ar' && (
+            <p className="text-sm font-semibold text-[#D8A517] font-serif mt-0.5" dir="rtl">
+              {item.nameAr}
+            </p>
+          )}
+
+          <div className="mt-3 inline-flex bg-[#F2C230] text-[#3B1F0F] font-black text-lg px-4 py-1.5 rounded-full shadow-sm font-serif">
+            {item.price} {t.menu.dh}
+          </div>
         </div>
 
         {/* Modal Body Content */}
         <div className="p-6 overflow-y-auto space-y-4 text-start">
-          
-          <div>
-            <h3 className="text-2xl font-black text-[#3B1F0F] font-serif leading-tight">
-              {name}
-            </h3>
-            {lang !== 'ar' && (
-              <p className="text-sm font-semibold text-[#D8A517] font-serif mt-0.5" dir="rtl">
-                {item.nameAr}
-              </p>
-            )}
-          </div>
 
           <p className="text-sm sm:text-base text-[#5A321B] leading-relaxed">
             {desc}
@@ -85,7 +72,6 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({ item, lang, on
             </p>
           </div>
 
-          {/* Informational Notice */}
           <div className="flex items-center gap-2 text-[11px] text-[#8C5E3C] bg-[#F2E9D8]/50 p-2.5 rounded-lg border border-[#EADBC4]/60">
             <Info className="w-4 h-4 text-[#D8A517] shrink-0" />
             <span>{t.menu.notice}</span>

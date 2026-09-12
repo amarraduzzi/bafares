@@ -1,0 +1,6 @@
+{
+  "name": "Ba Fares 1957 - Restaurant Marocain",
+  "description": "Site vitrine informatif pour Ba Fares, restaurant traditionnel marocain à Rabat depuis 1957. Petit-déjeuner, pâtisseries et plats traditionnels.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
